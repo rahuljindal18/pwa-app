@@ -11,6 +11,10 @@
     />
     <link type="text/css" href="/css/styles.css" rel="stylesheet" />
     <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
+    <meta name="theme-color" content="#FFE1C4" />
   </head>
   <body class="grey lighten-4">
     <!-- top nav -->
@@ -38,46 +42,7 @@
     </ul>
     <!-- recipes -->
     <div class="recipes container grey-text text-darken-1">
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
+      <h6 class="center">Recipes</h6>
     </div>
 
     <div class="center">
@@ -117,7 +82,30 @@
         </div>
       </form>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDGC4_MbGWYxMpyOfj4CGYmFmQVAUPxRuU",
+        authDomain: "food-app-pwa-595c7.firebaseapp.com",
+        databaseURL: "https://food-app-pwa-595c7.firebaseio.com",
+        projectId: "food-app-pwa-595c7",
+        storageBucket: "food-app-pwa-595c7.appspot.com",
+        messagingSenderId: "476295929417",
+        appId: "1:476295929417:web:3d5bf31dcc12b03dc52998",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script src="/js/app.js"></script>
+    <script src="/js/db.js"></script>
     <script src="/js/ui.js"></script>
   </body>
 </html>
